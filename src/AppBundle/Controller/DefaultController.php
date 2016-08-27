@@ -18,4 +18,13 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
     }
+
+    /**
+     * @Route("/view/{id}")
+     */
+    public function viewAction(Request $req, $id) {
+        return $this->render('default/view.html.twig', [
+            'id' => $id
+        ]);
+    }
 }
